@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous"></script>-->
 </head>
 <body>
     <div id="header">
@@ -38,7 +39,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem necessitatibus, ab ullam, nihil aperiam illum repudiandae velit aspernatur nobis, nulla modi nesciunt? Hic praesentium neque tenetur velit itaque deserunt ea!</p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience)">Experience</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
                         <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
@@ -68,6 +69,95 @@
         </div>
     </div>
 
+    <!-------------Services------------>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Mes Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorem est et obcaecati incidunt tenetur totam fugit quae, maxime eveniet perferendis illum ratione! Ipsum deserunt, ullam magni neque eveniet in?</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-crop-alt"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorem est et obcaecati incidunt tenetur totam fugit quae, maxime eveniet perferendis illum ratione! Ipsum deserunt, ullam magni neque eveniet in?</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fab fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorem est et obcaecati incidunt tenetur totam fugit quae, maxime eveniet perferendis illum ratione! Ipsum deserunt, ullam magni neque eveniet in?</p>
+                    <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------Portfolio------------>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Mon travail</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connects you yo the talented people around the world.
+                        Download it from play store.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connects you yo the talented people around the world.
+                        Download it from play store.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>The app connects you yo the talented people around the world.
+                        Download it from play store.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">Voir plus</a>
+        </div>
+    </div>
+
+    <!----------------------Contact-------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contactez-moi</h1>
+                    <p>djagob33@gmail.com</p>
+                    <p>00229 91-53-70-31</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-twitter-square"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <input type="text" name="Name" placeholder="Votre nom" required>
+                    <input type="email" name="email" placeholder="Votre E-mail" required>
+                    <textarea name="Message" rows="6" placeholder="Votre message"></textarea>
+                    <button type="submit">Soumettre</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
 
         var tablinks = document.getElementsByClassName("tab-links");
@@ -81,6 +171,8 @@
             for(tabcontent of tabcontents){
                 tabcontent.classList.remove("active-tab");
             }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
         }
 
     </script>
