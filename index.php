@@ -1,3 +1,10 @@
+<?php  
+       $conn=new mysqli("localhost","root","","mabdd");
+       if($conn->connect_error){
+         echo $conn->connect_error;
+         die();
+       }//connexion à la base de donnée
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -219,5 +226,54 @@
         .catch(error => console.error('Error!', error.message))
     })
   </script>
+
+
+<?php
+
+if( isset($_REQUEST ["nom"]) && isset($_REQUEST["prenom"])&& isset($_REQUEST ["age"]) && isset($_REQUEST["sexe"])){
+$nom =$_GET["nom"];
+$prenom =$_GET["prenom"];
+$age =$_GET["age"];
+$sexe =$_GET["sexe"];//pour récupérer les informations du formulaire
+
+$sql="INSERT INTO eleves(nom,prenoms,sexe,Age) VALUES ('$nom', '$prenom','$sexe','$age')"; //insertion(enregistrement) d'une valeur dans le champ nom
+$result = $conn -> query($sql);  //pour lancer la requete
+
+if ($result == 1) {
+  echo "Nom: ".$nom;
+  echo "<br>";
+  echo "Prénoms: ".$prenom;
+  echo "<br>";
+  echo "Age : ".$age;
+  echo "<br>";
+  echo "Sexe: ".$sexe;
+  
+  
+}else{
+  echo "erreur d'enregistrement";
+}
+
+
+}
+  else{
+    echo ' <a href="session.php">Retourner</a>';
+  }
+
+//session_destroy();//permet de supprimer les informations de la session
+
+
+
+
+ 
+//   $sql="CREATE DATABASE mabdd";
+//   $sql="CREATE TABLE eleve(
+//     id INT(11) AUTO_INCREMENT PRIMARY KEY,
+//     nom VARCHAR(100) NOT NULL,
+//     prenom VARCHAR(100) NOT NULL,
+//     sexe VARCHAR(100) NOT NULL,
+//     Age INT(11)
+// )";//creation de table eleve
+ // $conn -> query($sql);// lancement de la requete
+?>
 </body>
 </html>
